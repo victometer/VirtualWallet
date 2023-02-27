@@ -12,21 +12,9 @@ public class CreditCard extends Card implements ICharge {
         return availableCredit;
     }
 
-    public boolean logTransactions(){
-        return true;
-
+    public void charge(double amount, double percentage){
+        availableCredit -= amount*percentage + amount;
     }
 
-    public int addPercentage(int transaction){
-        return transaction + transaction * 10/100;
-    }
-
-    public void charge(double purchaseAmount){
-        availableCredit -= purchaseAmount;
-    }
-
-    public double reduceCredit(int transaction){
-        return this.availableCredit -= addPercentage(transaction);
-    }
 
 }

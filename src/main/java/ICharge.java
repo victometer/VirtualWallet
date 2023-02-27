@@ -1,6 +1,4 @@
 public interface ICharge {
-    public boolean logTransactions();
-    public void charge(double purchaseAmount);
-
+    public void charge(double purchaseAmount, double percentage);
 
 }

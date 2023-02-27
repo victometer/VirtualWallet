@@ -10,15 +10,21 @@ public class Wallet{
         this.paymentCards = new ArrayList<>();
     }
 
+    public ICharge getSelectedCard() {
+        return selectedCard;
+    }
+
     public void setSelectedCard(ICharge selectedCard) {
         this.selectedCard = selectedCard;
     }
 
-    public void pay(ICharge selectedCard, int purchaseAmount){
-        selectedCard.charge(purchaseAmount);
-
+//    public void pay(ICharge selectedCard, int purchaseAmount){
+//        selectedCard.charge(purchaseAmount);
+//
+//    }
+    public int cardCount(){
+        return paymentCards.size();
     }
-
     public void addPaymentCard(ICharge card){
         paymentCards.add(card);
 

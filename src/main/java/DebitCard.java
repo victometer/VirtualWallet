@@ -2,10 +2,10 @@ public class DebitCard extends Card implements ICharge{
 
     private int accountNo;
     private int sortCode;
-    private int balance;
+    private double balance;
 
 
-    public DebitCard(int balance, int accountNo, int sortCode, int cardNo, String expiryDate, int securityNo){
+    public DebitCard(double balance, int accountNo, int sortCode, long cardNo, String expiryDate, int securityNo){
         super(cardNo, expiryDate, securityNo);
         this.balance = balance;
         this.accountNo = accountNo;
@@ -13,17 +13,20 @@ public class DebitCard extends Card implements ICharge{
 
     }
 
-    public boolean logTransactions(){
-        return true;
-
+    public int getAccountNo() {
+        return accountNo;
     }
 
-    public void charge(double purchaseAmount){
-        balance -= purchaseAmount;
+    public int getSortCode() {
+        return sortCode;
     }
 
-    public double addPercentage(int transaction){
-        return transaction * 1;
+    public double getBalance() {
+        return balance;
+    }
+
+    public void charge(double purchaseAmount, double percentage){
+        balance -= purchaseAmount*percentage + purchaseAmount;
     }
 
 }

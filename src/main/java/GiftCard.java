@@ -6,11 +6,15 @@ public class GiftCard implements ICharge{
         this.balance = balance;
     }
 
-    public boolean logTransactions(){
-        return false;
+    public double getBalance() {
+        return balance;
     }
 
-    public void charge(double purchaseAmount){
+    public void charge(double amount, double percentage){
+        balance -= amount*percentage + amount;
+    }
+
+    public void reduceBalance(double purchaseAmount){
         balance -= purchaseAmount;
     }
 

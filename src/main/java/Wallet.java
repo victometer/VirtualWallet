@@ -15,7 +15,9 @@ public class Wallet{
     }
 
     public void setSelectedCard(ICharge selectedCard) {
-        this.selectedCard = selectedCard;
+        if(paymentCards.contains(selectedCard)) {
+            this.selectedCard = selectedCard;
+        }
     }
 
 //    public void pay(ICharge selectedCard, int purchaseAmount){
